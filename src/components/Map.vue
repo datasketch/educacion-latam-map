@@ -1,8 +1,8 @@
 <template>
   <div id="map" ref="container" :class="{ active: organizations.length }">
     <div :class="['aside', { active: organizations.length }]">
-      <div class="aside__header line v-centered justify-between">
-        <h3 class="aside__title" @click="goBack">
+      <div :class="['aside__header line v-centered justify-between', { small: selected }]" @click="goBack">
+        <h3 class="aside__title">
           {{ selected ? '&larr; ' + city : city }}
         </h3>
         <div class="close" @click="close" />
@@ -66,7 +66,7 @@ export default {
       styles: {
         global: {
           color: '#66bb6a',
-          fillColor: '#66bb6a',
+          fillColor: '#004e70',
           fillOpacity: 0.5,
           opacity: 0.5,
           radius: 65000,
@@ -190,13 +190,23 @@ export default {
 }
 
 .aside__header {
-  background: #ffffff;
+  background: #004e70;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  color: #ffffff;
   font-size: 1.8rem;
   font-weight: 700;
   padding: 10px;
   position: sticky;
   top: 0;
+}
+
+.aside__header.small {
+  animation: reduce 100ms linear 0s forwards;
+  cursor: pointer;
+}
+
+@keyframes reduce {
+  100% { font-size: 1.2rem; }
 }
 
 .aside .aside__content,

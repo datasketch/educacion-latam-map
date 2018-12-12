@@ -2,14 +2,14 @@
   <div id="app" :class="{ column: loading }">
     <Loader
       v-if="loading"
-      color="#66bb6a"
+      color="#004e70"
       :size="40" />
     <Map
       v-else
       :center="[4.6097100, -74.0817500]"
       :points="points"
       :values="values"
-      tile="https://cartodb-basemaps-{s}.global.ssl.fastly.net/rastertiles/voyager/{z}/{x}/{y}{r}.png" />
+      tile="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png" />
   </div>
 </template>
 
