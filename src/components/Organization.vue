@@ -8,10 +8,10 @@
       <p class="contact__header">Nombre de contacto</p>
       <p class="contact__value">{{ organization.contact_name }}</p>
     </div>
-    <div class="contact__field" v-if="organization.contact_email">
+    <!-- <div class="contact__field" v-if="organization.contact_email">
       <p class="contact__header">Email</p>
       <p class="contact__value">{{ organization.contact_email }}</p>
-    </div>
+    </div> -->
     <div class="contact__field" v-if="organization.website">
       <p class="contact__header">Sitio web</p>
       <p class="contact__value"><a :href="organization.website" target="_blank">{{ organization.website }} <i class="fa fa-external-link"></i></a></p>
